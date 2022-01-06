@@ -18,32 +18,25 @@ import bitcoin.core
 __version__ = '0.11.1dev'
 
 class MainParams(bitcoin.core.CoreMainParams):
-    MESSAGE_START = b'\xf9\xbe\xb4\xd9'
-    DEFAULT_PORT = 8333
-    RPC_PORT = 8332
-    DNS_SEEDS = (('bitcoin.sipa.be', 'seed.bitcoin.sipa.be'),
-                 ('bluematt.me', 'dnsseed.bluematt.me'),
-                 ('dashjr.org', 'dnsseed.bitcoin.dashjr.org'),
-                 ('bitcoinstats.com', 'seed.bitcoinstats.com'),
-                 ('xf2.org', 'bitseed.xf2.org'),
-                 ('bitcoin.jonasschnelli.ch', 'seed.bitcoin.jonasschnelli.ch'))
-    BASE58_PREFIXES = {'PUBKEY_ADDR':0,
-                       'SCRIPT_ADDR':5,
-                       'SECRET_KEY' :128}
-    BECH32_HRP = 'bc'
+    MESSAGE_START = b'\x03\xd5\xb5\x03'
+    DEFAULT_PORT = 65534
+    RPC_PORT = 65535
+    DNS_SEEDS = (('unobtanium.uno','node1.unobtanium.uno'),
+                 ('unobtanium.uno','node2.unobtanium.uno'))
+    BASE58_PREFIXES = {'PUBKEY_ADDR':130,
+                       'SCRIPT_ADDR':30,
+                       'SECRET_KEY' :224}
+    BECH32_HRP = 'un'
 
 class TestNetParams(bitcoin.core.CoreTestNetParams):
-    MESSAGE_START = b'\x0b\x11\x09\x07'
-    DEFAULT_PORT = 18333
-    RPC_PORT = 18332
-    DNS_SEEDS = (('testnetbitcoin.jonasschnelli.ch', 'testnet-seed.bitcoin.jonasschnelli.ch'),
-                 ('petertodd.org', 'seed.tbtc.petertodd.org'),
-                 ('bluematt.me', 'testnet-seed.bluematt.me'),
-                 ('bitcoin.schildbach.de', 'testnet-seed.bitcoin.schildbach.de'))
-    BASE58_PREFIXES = {'PUBKEY_ADDR':111,
-                       'SCRIPT_ADDR':196,
+    MESSAGE_START = b'\x01\x02\x03\x04'
+    DEFAULT_PORT = 65522
+    RPC_PORT = 65531
+    DNS_SEEDS = (('temporary','3.144.134.250'))
+    BASE58_PREFIXES = {'PUBKEY_ADDR':68,
+                       'SCRIPT_ADDR':30,
                        'SECRET_KEY' :239}
-    BECH32_HRP = 'tb'
+    BECH32_HRP = 'tun'
 
 class SigNetParams(bitcoin.core.CoreSigNetParams):
     MESSAGE_START = b'\x0a\x03\xcf\x40'
